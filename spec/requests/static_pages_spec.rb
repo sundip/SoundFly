@@ -3,16 +3,12 @@ require 'spec_helper'
 describe "Static pages" do
 
   describe "Home page" do
+     before { visit root_path } 
 
-    it "should have the content 'SoundFly'" do
-      visit '/static_pages/home'
-      page.should have_content('SoundFly')
-    end
-    
-    it "should have the right title" do
-      visit '/static_pages/home'
-      page.should have_selector('title',
-                        :text => "SoundFly | Home")
+      it { should have_selector('h1', text: 'SoundFly') }
+      it { should have_selector 'title',
+                          text: "SoundFly" }
+      it { should_not have_selector 'title', text: '| Home' }
     end
   end
   
@@ -31,3 +27,6 @@ describe "Static pages" do
   end
   
 end
+
+#root_path
+#about_path
