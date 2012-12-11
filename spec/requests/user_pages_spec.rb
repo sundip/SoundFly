@@ -18,9 +18,9 @@ describe "User pages" do
     describe "pagination" do
       
       before(:all) { 30.times { FactoryGirl.create(:user) } }
-      after(:all) { User.delete_all }
+      after(:all)  { User.delete_all }
 
-      let(:first_page) { User.paginate(page: 1) }
+      let(:first_page)  { User.paginate(page: 1) }
       let(:second_page) { User.paginate(page: 2) }
 
       it { should have_link('Next') }
@@ -52,7 +52,7 @@ describe "User pages" do
             page.should have_selector('li', text: user.name)
           end
         end
-      end
+      end 
     end
 
     describe "delete links" do
@@ -82,7 +82,7 @@ describe "User pages" do
 
     before { visit user_path(user) }
 
-    it { should have_selector('h1', text: user.name) }
+    it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
 
     describe "microposts" do
@@ -91,7 +91,7 @@ describe "User pages" do
       it { should have_content(user.microposts.count) }
     end
 
-    it { should have_selector('h1', text: user.name) }
+    it { should have_selector('h1',    text: user.name) }
     it { should have_selector('title', text: user.name) }
 
     describe "follow/unfollow buttons" do
@@ -148,7 +148,7 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1', text: 'Sign up') }
+    it { should have_selector('h1',    text: 'Sign up') }
     it { should have_selector('title', text: full_title('Sign up')) }
   end
 
@@ -173,9 +173,9 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name", with: "Example User"
-        fill_in "Email", with: "user@example.com"
-        fill_in "Password", with: "foobar"
+        fill_in "Name",         with: "Example User"
+        fill_in "Email",        with: "user@example.com"
+        fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
       end
 
@@ -203,7 +203,7 @@ describe "User pages" do
     end
 
     describe "page" do
-      it { should have_selector('h1', text: "Update your profile") }
+      it { should have_selector('h1',    text: "Update your profile") }
       it { should have_selector('title', text: "Edit user") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
@@ -215,12 +215,12 @@ describe "User pages" do
     end
 
     describe "with valid information" do
-      let(:new_name) { "New Name" }
+      let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name", with: new_name
-        fill_in "Email", with: new_email
-        fill_in "Password", with: user.password
+        fill_in "Name",             with: new_name
+        fill_in "Email",            with: new_email
+        fill_in "Password",         with: user.password
         fill_in "Confirm Password", with: user.password
         click_button "Save changes"
       end
@@ -228,7 +228,7 @@ describe "User pages" do
       it { should have_selector('title', text: new_name) }
       it { should have_selector('div.alert.alert-success') }
       it { should have_link('Sign out', href: signout_path) }
-      specify { user.reload.name.should == new_name }
+      specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end
   end
