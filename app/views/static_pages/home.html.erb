@@ -1,3 +1,15 @@
+<style>
+body {
+position: relative;
+padding-top: 40px;
+background-color: white;
+background-image: url('/assets/Sunset_Window.png');
+background-repeat: repeat-x;
+background-position: 0 40px;
+background-size: 100%;
+}
+</style>
+
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
@@ -17,15 +29,14 @@
 	</div>
   </div>  
 <% else %>
-  <div class="center hero-unit">
-    <h1>Welcome to the SoundFly</h1>
-
-    <h2>
-      This is the home page for SoundFly
-    </h2>
-
+  <div class="hero-unit" style="background-color: transparent; padding-top: 0px;">
+    
+    <h1 style="color: white;">Share your </h1>
+    <h1 style="color: #00FF00;">voice</h1>
+	<h1 style="color:white;"<br> with the</h1>
+	<h1 style="color: #00FF00;">	world.</h1>
+	<br>
     <%= link_to "Sign up now!", signup_path, 
                                 class: "btn btn-large btn-primary" %>
   </div>
-
 <% end %> 
