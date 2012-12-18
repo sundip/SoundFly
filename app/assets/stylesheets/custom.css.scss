@@ -84,7 +84,7 @@ p {
   line-height: 1.7em;
 }
 
-/* Home Page */
+/* home page */
 
 body#home {
 position: relative;
@@ -94,6 +94,30 @@ background-image: url('/assets/Sunset_Window.png');
 background-repeat: repeat-x;
 background-position: 0 40px;
 background-size: 100%;
+}
+
+.hero-unit {
+  padding: 60px;
+  padding-top: 0px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: transparent;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.hero-unit h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  color: inherit;
+  letter-spacing: -1px;
+}
+.hero-unit li {
+  line-height: 30px;
 }
 
 /* footer */
