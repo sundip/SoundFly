@@ -29,6 +29,8 @@ textarea {
 
 $lightGray: #999;
 $grayMediumLight: #eaeaea;
+$limeGreen: #00ff00;
+$darkerGreen: #59A80F;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -43,14 +45,14 @@ $grayMediumLight: #eaeaea;
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: $limeGreen;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: #fff;
+    color: $darkerGreen;
     text-decoration: none;
   }
 }
@@ -80,6 +82,18 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+/* Home Page */
+
+body#home {
+position: relative;
+padding-top: 40px;
+background-color: white;
+background-image: url('/assets/Sunset_Window.png');
+background-repeat: repeat-x;
+background-position: 0 40px;
+background-size: 100%;
 }
 
 /* footer */
